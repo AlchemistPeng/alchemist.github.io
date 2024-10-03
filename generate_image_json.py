@@ -15,7 +15,8 @@ def generate_image_json(root_dir, output_file):
                 
                 image_info = {
                     "src": "images/" + relative_path.replace('\\', '/'),  # 确保路径使用正斜杠
-                    "category": category
+                    "category": category,
+                    "price": 99.99
                 }
                 images.append(image_info)
 

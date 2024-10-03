@@ -23,10 +23,23 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-        .gallery img {
-            width: 200px;
+        .gallery-item {
+            width: calc(25% - 20px);
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
             height: 200px;
             object-fit: cover;
+        }
+        .price {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 20px);
+            }
         }
     </style>
 </head>
@@ -65,10 +78,20 @@
             const gallery = document.getElementById('gallery');
             gallery.innerHTML = '';
             imagesToShow.forEach(image => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
                 const img = document.createElement('img');
                 img.src = image.src;
                 img.alt = image.category;
-                gallery.appendChild(img);
+                item.appendChild(img);
+
+                const price = document.createElement('div');
+                price.className = 'price';
+                price.textContent = `$${image.price}`;
+                item.appendChild(price);
+
+                gallery.appendChild(item);
             });
         }
 
