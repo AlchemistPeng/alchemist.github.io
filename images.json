@@ -1,0 +1,70 @@
+[
+  {
+    "src": "images/jeans/gifts.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/p3.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/agency-img.jpg",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/p2.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/favicon.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/logo.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/p1.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/p4.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/jeans/line.png",
+    "category": "jeans"
+  },
+  {
+    "src": "images/leggings/slider-bg.jpg",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/p8.png",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/p5.png",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/p6.png",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/p7.png",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/saving-img.png",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/purse.png",
+    "category": "leggings"
+  },
+  {
+    "src": "images/leggings/slider-img.png",
+    "category": "leggings"
+  }
+]
