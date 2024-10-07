@@ -13,10 +13,12 @@ def generate_image_json(root_dir, output_file):
                 # 使用父文件夹名称作为类别
                 category = os.path.basename(os.path.dirname(relative_path))
                 
+                category, price = category.split("_")
+                
                 image_info = {
                     "src": "images/" + relative_path.replace('\\', '/'),  # 确保路径使用正斜杠
                     "category": category,
-                    "price": 99.99
+                    "price": price
                 }
                 images.append(image_info)
 

@@ -6,40 +6,75 @@
     <title>图片展示与分类</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* 更接近 Instagram 的字体 */
             margin: 0;
+            background-color: #fafafa; /* Instagram 背景色 */
             padding: 20px;
         }
+
         .filter-buttons {
+            display: flex;
+            justify-content: center; /* 居中按钮 */
             margin-bottom: 20px;
         }
+
         .filter-buttons button {
-            margin-right: 10px;
-            padding: 5px 10px;
+            margin: 0 5px; /* 按钮间距 */
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px; /* 圆角按钮 */
+            background-color: #efefef; /* 按钮背景色 */
+            color: #333;
             cursor: pointer;
+            font-size: 14px;
+            font-weight: 600; /* 加粗字体 */
+            text-transform: uppercase; /* 全部大写 */
         }
+
+        .filter-buttons button:hover {
+            background-color: #ddd; /* 悬停效果 */
+        }
+
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 每行两列 */
+            /*grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 响应式网格布局 */
+            grid-gap: 10px; /* 图片间距 */
         }
+        @media (max-width: 768px) { /* 移动设备上仍然保持两列 */
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .gallery-item {
-            width: calc(25% - 20px);
-            text-align: center;
+            position: relative;
+            overflow: hidden; /* 裁剪图片 */
+            border-radius: 10px; /* 圆角图片 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影 */
         }
+
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease; /* 添加过渡效果 */
         }
+
+        .gallery-item:hover img {
+            transform: scale(1.1); /* 悬停放大效果 */
+        }
+
         .price {
-            margin-top: 5px;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.6); /* 价格背景 */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
             font-weight: bold;
-        }
-        @media (max-width: 768px) {
-            .gallery-item {
-                width: calc(50% - 20px);
-            }
+            font-size: 14px;
         }
     </style>
 </head>
@@ -49,7 +84,6 @@
     </div>
 
     <div class="gallery" id="gallery"></div>
-
     <script>
         let images = [];
 
