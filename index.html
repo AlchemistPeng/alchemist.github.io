@@ -18,11 +18,12 @@
         }
 
         .filter-buttons {
-            display: flex;
-            flex-wrap: wrap; /* 允许换行 */
-            justify-content: center; /* 居中按钮 */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 每行三列 */
+            grid-gap: 10px; /* 按钮间距 */
+            justify-content: center; /* 水平居中 */
             margin-bottom: 20px;
-        }
+                }
 
         .filter-buttons button {
             margin: 5px; /* 按钮间距 */
@@ -35,6 +36,7 @@
             font-size: 14px;
             font-weight: 600; /* 加粗字体 */
             text-transform: uppercase; /* 全部大写 */
+            width: 100%; /* 按钮宽度占满网格单元格 */
         }
 
         .filter-buttons button:hover {
