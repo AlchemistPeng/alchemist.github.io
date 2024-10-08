@@ -6,7 +6,9 @@ def generate_image_json(root_dir, output_file):
     supported_formats = ('.jpg', '.jpeg', '.png', '.gif')
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
+        i = 0
         for filename in filenames:
+            i += 1
             if filename.lower().endswith(supported_formats):
                 # 获取相对路径
                 relative_path = os.path.relpath(os.path.join(dirpath, filename), root_dir)
@@ -18,7 +20,7 @@ def generate_image_json(root_dir, output_file):
                 image_info = {
                     "src": "images/" + relative_path.replace('\\', '/'),  # 确保路径使用正斜杠
                     "category": category,
-                    "price": price
+                    "price": price if i == 1 else ""
                 }
                 images.append(image_info)
 

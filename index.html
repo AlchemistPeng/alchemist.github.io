@@ -129,9 +129,12 @@
                 item.appendChild(img);
 
                 const price = document.createElement('div');
-                price.className = 'price';
-                price.textContent = `$${image.price}`;
-                item.appendChild(price);
+                if (image.price){
+                    price.className = 'price';
+                    price.textContent = `$${image.price}`;
+                    item.appendChild(price);
+                }
+                
 
                 gallery.appendChild(item);
             });
